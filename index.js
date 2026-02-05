@@ -2,17 +2,18 @@ const sports = [
   { 
     title: "Chess", 
     desc: "The ultimate battle of minds. Sharpen your strategy and challenge your intellect.",
-    date: "12 March 2026",
-    location: "College Hall",
+    date: "Will be announced soon",
+    location: "-",
     team: "Solo",
     img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // landscape
-    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg" // portrait
+    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // portrait
+    link: "regestration/chess/chess_reg.html",
   },
   { 
     title: "Football", 
     desc: "Feel the thrill of every goal and play.",
-    date: "15 March 2026",
-    location: "College Stadium",
+    date: "Will be announced soon",
+    location: "-",
     team: "11 per team",
     img: "https://image2url.com/r2/default/images/1770216813175-e3d93620-bfde-472c-8111-13f81a7045bd.jpg",
     imgPortrait: "https://image2url.com/r2/default/images/1770216752866-5280a394-f105-4238-8fee-d7ccce23cc69.jpg"
@@ -20,8 +21,8 @@ const sports = [
   { 
     title: "Cricket", 
     desc: "Master batting, bowling, and fielding techniques.",
-    date: "18 March 2026",
-    location: "Main Ground",
+    date: "Will be announced soon",
+    location: "-",
     team: "11 per team",
     img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
     imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg"
@@ -29,8 +30,8 @@ const sports = [
   { 
     title: "Basketball", 
     desc: "Improve your agility and shooting skills.",
-    date: "20 March 2026",
-    location: "Indoor Court",
+    date: "Will be announced soon",
+    location: "-",
     team: "5 per team",
     img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",
     imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg"
@@ -38,8 +39,8 @@ const sports = [
   { 
     title: "Volleyball", 
     desc: "Teamwork and precision are everything.",
-    date: "22 March 2026",
-    location: "Outdoor Court",
+    date: "Will be announced soon",
+    location: "-",
     team: "6 per team",
     img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
     imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png"
@@ -47,8 +48,8 @@ const sports = [
   { 
     title: "Carrom", 
     desc: "Precision and focus in this classic indoor game.",
-    date: "25 March 2026",
-    location: "Recreation Room",
+    date: "Will be announced soon",
+    location: "-",
     team: "Solo/2 per team",
     img: "https://image2url.com/r2/default/images/1770218939437-8143fb2e-0ab0-4a9e-8038-8e07a2cc081b.jpeg",
     imgPortrait: "https://image2url.com/r2/default/images/1770218774659-a22f9d93-2794-4e88-aede-6fb13be7bb87.jpeg"
@@ -80,7 +81,7 @@ sports.forEach((sport, i) => {
       <span>📍 ${sport.location}</span>
       <span>👥 ${sport.team}</span>
     </div>
-    <a href="#" class="register-btn">Register Now</a>
+    <a href="${sport.link}" class="register-btn">Register Now</a>
   `;
   track.appendChild(card);
 
