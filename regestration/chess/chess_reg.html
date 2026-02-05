@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chess Tournament Registration</title>
+
+<style>
+/* Reset + fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 35px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Logo and header */
+.logo {
+  max-width: 90px;
+  margin-bottom: 15px;
+  animation: bounceLogo 1.5s infinite alternate;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 18px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s forwards;
+}
+
+.field:nth-child(1) { animation-delay: 0.2s; }
+.field:nth-child(2) { animation-delay: 0.3s; }
+.field:nth-child(3) { animation-delay: 0.4s; }
+.field:nth-child(4) { animation-delay: 0.5s; }
+.field:nth-child(5) { animation-delay: 0.6s; }
+.field:nth-child(6) { animation-delay: 0.7s; }
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Submit button */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Message */
+.message {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  display: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.success {
+  background: rgba(0, 255, 0, 0.2);
+  color: #00ff9d;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff8a8a;
+}
+
+/* Animations */
+@keyframes bounceLogo {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <img src="chess_icon.png" alt="Chess Logo" class="logo">
+  <h1>Chess<br> Tournament Registration</h1>
+  <h2>Join the Ultimate Battle of Minds</h2>
+
+  <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSfwB_4PX9G73_b9AKytYz9g8BxUI7V3si4aCQ5uMPRkUeSVFQ/formResponse" method="POST" target="hidden_iframe">
+
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" name="entry.823367903" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="field">
+      <label>College ID / AUID</label>
+      <input type="text" name="entry.1220683438" placeholder="Enter your ID" required>
+    </div>
+
+    <div class="field">
+      <label>Mobile Number</label>
+      <input type="tel" name="entry.602067814" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+    </div>
+
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" name="entry.528041579" placeholder="Enter your email" required>
+    </div>
+
+    <div class="field">
+      <label>Semester</label>
+      <select name="entry.1913456757" required>
+        <option value="">Select Semester</option>
+        <option value="Semester 2">Semester 2</option>
+        <option value="Semester 4">Semester 4</option>
+        <option value="Semester 6">Semester 6</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Department</label>
+      <select name="entry.1418684154" required>
+        <option value="">Select Department</option>
+        <option value="CS">CS</option>
+        <option value="ARC">ARC</option>
+        <option value="EVT">EVT</option>
+        <option value="ADFT">ADFT</option>
+        <option value="ECE">ECE</option>
+      </select>
+    </div>
+
+    <button class="btn" type="submit" id="submit-button">Register Now</button>
+
+  </form>
+
+  <div id="message" class="message"></div>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+</div>
+
+<script>
+const form = document.getElementById("form");
+const messageDiv = document.getElementById("message");
+const submitButton = document.getElementById("submit-button");
+
+form.addEventListener("submit", function (e) {
+  // Show submitting message
+  messageDiv.style.display = "block";
+  messageDiv.textContent = "Submitting...";
+  messageDiv.className = "message";
+
+  submitButton.disabled = true;
+
+  // Simulate success
+  setTimeout(() => {
+    messageDiv.textContent = "Thank you! Your registration has been recorded.";
+    messageDiv.className = "message success";
+    form.reset();
+    submitButton.disabled = false;
+    setTimeout(() => { messageDiv.style.display = "none"; }, 3500);
+  }, 1500);
+});
+</script>
+</body>
+</html>
