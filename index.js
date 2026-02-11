@@ -19,7 +19,7 @@ const sports = [
     team: "Singles / Doubles",
     img: "img/sports/landscape/badminton_1.avif",
     imgPortrait: "img/sports/portrait/badminton_2.avif",
-    link: "/registration/badminton/reg.html"
+    link: "regestration/badminton/badminton_reg.html"
   },
 
   { 
@@ -166,4 +166,5 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
 
