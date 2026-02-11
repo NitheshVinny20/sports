@@ -17,8 +17,8 @@ const sports = [
     date: "Will be announced soon",
     location: "-",
     team: "Singles / Doubles",
-    img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg",
+    img: "https://img.sanishtech.com/u/abce7230b7b12203c6211a8523673574.png",
+    imgPortrait: "https://img.sanishtech.com/u/482dd7707aa597cbbde06bf84198e9ae.png",
     link: "registration/badminton/reg.html"
   },
 
@@ -50,8 +50,8 @@ const sports = [
     date: "Will be announced soon",
     location: "-",
     team: "7 per team",
-    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
-    imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
+    img: "https://img.sanishtech.com/u/b88db8530beeb33e42c1cae988892b24.png",
+    imgPortrait: "https://img.sanishtech.com/u/b88db8530beeb33e42c1cae988892b24.png",
     link: "registration/throwball/reg.html"
   },
 
@@ -168,4 +168,3 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
-
