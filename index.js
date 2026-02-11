@@ -6,20 +6,31 @@ const sports = [
     date: "Will be announced soon",
     location: "-",
     team: "Solo",
-    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
-    link: "registration/chess/chess_reg.html"
+    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // landscape
+    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // portrait
+    link: "regestration/chess/chess_reg.html",
   },
 
   { 
-    title: "Badminton", 
-    desc: "Speed, agility and precision define champions on court.",
+    title: "Badminton - Girls", 
+    desc: "Speed and precision define champions.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "Singles / Doubles",
+    img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",  // temporary reuse
+    imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg",
+    link: "registration/badminton_girls/reg.html"
+  },
+
+  { 
+    title: "Badminton - Boys", 
+    desc: "Agility and power on court.",
     date: "Will be announced soon",
     location: "-",
     team: "Singles / Doubles",
     img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",
     imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg",
-    link: "registration/badminton/reg.html"
+    link: "registration/badminton_boys/reg.html"
   },
 
   { 
@@ -34,14 +45,25 @@ const sports = [
   },
 
   { 
-    title: "Cricket", 
-    desc: "Teamwork, strategy and power-packed action.",
+    title: "Cricket - Girls", 
+    desc: "Teamwork and strategy on the field.",
     date: "Will be announced soon",
     location: "-",
     team: "11 per team",
     img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
     imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg",
-    link: "registration/cricket/reg.html"
+    link: "registration/cricket_girls/reg.html"
+  },
+
+  { 
+    title: "Cricket - Boys", 
+    desc: "Power-packed bat and ball action.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "11 per team",
+    img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg",
+    link: "registration/cricket_boys/reg.html"
   },
 
   { 
@@ -50,20 +72,31 @@ const sports = [
     date: "Will be announced soon",
     location: "-",
     team: "7 per team",
-    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
+    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",  // temporary reuse
     imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
     link: "registration/throwball/reg.html"
   },
 
   { 
-    title: "Volleyball", 
-    desc: "Energy, coordination and powerful spikes.",
+    title: "Volleyball - Girls", 
+    desc: "Precision and coordination on the court.",
     date: "Will be announced soon",
     location: "-",
     team: "6 per team",
     img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
     imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
-    link: "registration/volleyball/reg.html"
+    link: "registration/volleyball_girls/reg.html"
+  },
+
+  { 
+    title: "Volleyball - Boys", 
+    desc: "Energy and powerful spikes define this sport.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "6 per team",
+    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
+    imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
+    link: "registration/volleyball_boys/reg.html"
   },
 
   { 
@@ -78,7 +111,6 @@ const sports = [
   }
 
 ];
-
 
 
 const track = document.getElementById('track');
@@ -168,5 +200,3 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
-
-
