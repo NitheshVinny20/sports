@@ -18,7 +18,7 @@ const sports = [
     location: "-",
     team: "Singles / Doubles",
     img: "https://img.sanishtech.com/u/abce7230b7b12203c6211a8523673574.png",
-    imgPortrait: "https://img.sanishtech.com/u/482dd7707aa597cbbde06bf84198e9ae.png",
+    imgPortrait: "https://image2url.com/r2/default/images/1770806818380-eb632d20-c260-42f4-916e-861e4db98645.png",
     link: "registration/badminton/reg.html"
   },
 
@@ -50,8 +50,8 @@ const sports = [
     date: "Will be announced soon",
     location: "-",
     team: "7 per team",
-    img: "https://img.sanishtech.com/u/b88db8530beeb33e42c1cae988892b24.png",
-    imgPortrait: "https://img.sanishtech.com/u/b88db8530beeb33e42c1cae988892b24.png",
+    img: "https://image2url.com/r2/default/images/1770806733991-ab7ed690-4eb7-4878-ae78-0b7383d19b3b.png",
+    imgPortrait: "https://image2url.com/r2/default/images/1770806733991-ab7ed690-4eb7-4878-ae78-0b7383d19b3b.png",
     link: "registration/throwball/reg.html"
   },
 
