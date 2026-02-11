@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Tournament Registration</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <img src="badminton.png" alt="Badminton Logo" class="logo">
+            <h1>Badminton</h1>
+            <p>Tournament Registration</p>
+        </div>
+
+        <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLScgNHJi2uYloWTSTUSGEXxTtIAVHLMKh2qCxRnCioDhbYrumg/formResponse" method="POST" target="hidden_iframe">
+            
+            <div class="field">
+                <label>Full Name</label>
+                <input type="text" name="entry.823367903" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="field">
+                <label>College ID / AUID</label>
+                <input type="text" name="entry.1220683438" placeholder="Enter your ID" required>
+            </div>
+
+            <div class="grid">
+                <div class="field">
+                    <label>Department</label>
+                    <select name="entry.1418684154" required>
+                        <option value="">Select</option>
+                        <option value="CS">CS</option>
+                        <option value="ARC">ARC</option>
+                        <option value="EVT">EVT</option>
+                        <option value="ADFT">ADFT</option>
+                        <option value="ECE">ECE</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Semester</label>
+                    <select name="entry.1913456757" required>
+                        <option value="">Select</option>
+                        <option value="Semester 2">Sem 2</option>
+                        <option value="Semester 4">Sem 4</option>
+                        <option value="Semester 6">Sem 6</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Mobile Number</label>
+                <input type="tel" name="entry.602067814" placeholder="10-digit phone number" required pattern="[0-9]{10}">
+            </div>
+
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" name="entry.528041579" placeholder="Enter your email" required>
+            </div>
+
+            <button class="btn" type="submit" id="submit-button">Register Now</button>
+        </form>
+
+        <div id="message" class="message"></div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>
