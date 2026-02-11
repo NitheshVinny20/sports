@@ -1,14 +1,104 @@
 const sports = [
+
   { 
     title: "Chess", 
     desc: "The ultimate battle of minds. Sharpen your strategy and challenge your intellect.",
     date: "Will be announced soon",
     location: "-",
     team: "Solo",
-    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // landscape
-    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // portrait
-    link: "regestration/chess/chess_reg.html",
+    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
+    link: "registration/chess/chess_reg.html"
   },
+
+  { 
+    title: "Badminton - Girls", 
+    desc: "Speed and precision define champions.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "Singles / Doubles",
+    img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",  // temporary reuse
+    imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg",
+    link: "registration/badminton_girls/reg.html"
+  },
+
+  { 
+    title: "Badminton - Boys", 
+    desc: "Agility and power on court.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "Singles / Doubles",
+    img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg",
+    link: "registration/badminton_boys/reg.html"
+  },
+
+  { 
+    title: "Carrom", 
+    desc: "Precision and focus in this classic indoor game.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "Solo / 2 per team",
+    img: "https://image2url.com/r2/default/images/1770218939437-8143fb2e-0ab0-4a9e-8038-8e07a2cc081b.jpeg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770218774659-a22f9d93-2794-4e88-aede-6fb13be7bb87.jpeg",
+    link: "registration/carrom/reg.html"
+  },
+
+  { 
+    title: "Cricket - Girls", 
+    desc: "Teamwork and strategy on the field.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "11 per team",
+    img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg",
+    link: "registration/cricket_girls/reg.html"
+  },
+
+  { 
+    title: "Cricket - Boys", 
+    desc: "Power-packed bat and ball action.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "11 per team",
+    img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg",
+    link: "registration/cricket_boys/reg.html"
+  },
+
+  { 
+    title: "Throw Ball", 
+    desc: "Fast reflexes and teamwork define the game.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "7 per team",
+    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",  // temporary reuse
+    imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
+    link: "registration/throwball/reg.html"
+  },
+
+  { 
+    title: "Volleyball - Girls", 
+    desc: "Precision and coordination on the court.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "6 per team",
+    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
+    imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
+    link: "registration/volleyball_girls/reg.html"
+  },
+
+  { 
+    title: "Volleyball - Boys", 
+    desc: "Energy and powerful spikes define this sport.",
+    date: "Will be announced soon",
+    location: "-",
+    team: "6 per team",
+    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
+    imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
+    link: "registration/volleyball_boys/reg.html"
+  },
+
   { 
     title: "Football", 
     desc: "Feel the thrill of every goal and play.",
@@ -16,45 +106,13 @@ const sports = [
     location: "-",
     team: "11 per team",
     img: "https://image2url.com/r2/default/images/1770216813175-e3d93620-bfde-472c-8111-13f81a7045bd.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770216752866-5280a394-f105-4238-8fee-d7ccce23cc69.jpg"
-  },
-  { 
-    title: "Cricket", 
-    desc: "Master batting, bowling, and fielding techniques.",
-    date: "Will be announced soon",
-    location: "-",
-    team: "11 per team",
-    img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg"
-  },
-  { 
-    title: "Basketball", 
-    desc: "Improve your agility and shooting skills.",
-    date: "Will be announced soon",
-    location: "-",
-    team: "5 per team",
-    img: "https://image2url.com/r2/default/images/1770218128624-6a8e4602-8006-4601-8e51-1da6cb0fb5c5.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770218356771-17ce1258-cc26-4d40-b3fa-7d8192f85ab2.jpg"
-  },
-  { 
-    title: "Volleyball", 
-    desc: "Teamwork and precision are everything.",
-    date: "Will be announced soon",
-    location: "-",
-    team: "6 per team",
-    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
-    imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png"
-  },
-  { 
-    title: "Carrom", 
-    desc: "Precision and focus in this classic indoor game.",
-    date: "Will be announced soon",
-    location: "-",
-    team: "Solo/2 per team",
-    img: "https://image2url.com/r2/default/images/1770218939437-8143fb2e-0ab0-4a9e-8038-8e07a2cc081b.jpeg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770218774659-a22f9d93-2794-4e88-aede-6fb13be7bb87.jpeg"
+    imgPortrait: "https://image2url.com/r2/default/images/1770216752866-5280a394-f105-4238-8fee-d7ccce23cc69.jpg",
+    link: "registration/football/reg.html"
   }
+
 ];
+
+
 
 const track = document.getElementById('track');
 const bg = document.getElementById('bg-overlay');
@@ -143,5 +201,3 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
-
-
