@@ -30,7 +30,7 @@ const sports = [
     team: "Solo / 2 per team",
     img: "https://image2url.com/r2/default/images/1770218939437-8143fb2e-0ab0-4a9e-8038-8e07a2cc081b.jpeg",
     imgPortrait: "https://image2url.com/r2/default/images/1770218774659-a22f9d93-2794-4e88-aede-6fb13be7bb87.jpeg",
-    link: "/regestration/carrom/carrom_reg.html"
+    link: "regestration/carrom/carrom_reg.html"
   },
 
   { 
@@ -168,3 +168,4 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
