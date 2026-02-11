@@ -8,7 +8,7 @@ const sports = [
     team: "Solo",
     img: "img/sports/landscape/chess_1.avif",
     imgPortrait: "img/sports/landscape/chess_1.avif",
-    link: "/registration/chess/chess_reg.html"
+    link: "registration/chess/chess_reg.html"
   },
 
   { 
@@ -30,7 +30,7 @@ const sports = [
     team: "Solo / 2 per team",
     img: "img/sports/landscape/carrom_1.avif",
     imgPortrait: "img/sports/portrait/carrom_2.avif",
-    link: "/registration/carrom/carrom_reg.html"
+    link: "registration/carrom/carrom_reg.html"
   },
 
   { 
@@ -166,3 +166,4 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
