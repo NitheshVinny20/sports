@@ -1,85 +1,83 @@
 const sports = [
 
   { 
-    title: "Chess", 
+    title: "Chess",
     desc: "The ultimate battle of minds. Sharpen your strategy and challenge your intellect.",
     date: "Will be announced soon",
     location: "-",
     team: "Solo",
-    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
-    link: "regestration/chess/chess_reg.html"   // NOT touched
+    img: "img/sports/landscape/chess_1.avif",
+    imgPortrait: "img/sports/landscape/chess_1.avif",
+    link: "/registration/chess/chess_reg.html"
   },
 
   { 
-    title: "Badminton", 
+    title: "Badminton",
     desc: "Speed and precision define champions.",
     date: "Will be announced soon",
     location: "-",
     team: "Singles / Doubles",
-    img: "https://img.sanishtech.com/u/abce7230b7b12203c6211a8523673574.png",
-    imgPortrait: "https://image2url.com/r2/default/images/1770806818380-eb632d20-c260-42f4-916e-861e4db98645.png",
-    link: "registration/badminton/reg.html"
+    img: "img/sports/landscape/badminton_1.avif",
+    imgPortrait: "img/sports/portrait/badminton_2.avif",
+    link: "/registration/badminton/reg.html"
   },
 
   { 
-    title: "Carrom", 
+    title: "Carrom",
     desc: "Precision and focus in this classic indoor game.",
     date: "Will be announced soon",
     location: "-",
     team: "Solo / 2 per team",
-    img: "https://image2url.com/r2/default/images/1770218939437-8143fb2e-0ab0-4a9e-8038-8e07a2cc081b.jpeg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770218774659-a22f9d93-2794-4e88-aede-6fb13be7bb87.jpeg",
-    link: "regestration/carrom/carrom_reg.html"
+    img: "img/sports/landscape/carrom_1.avif",
+    imgPortrait: "img/sports/portrait/carrom_2.avif",
+    link: "/registration/carrom/carrom_reg.html"
   },
 
   { 
-    title: "Cricket", 
+    title: "Cricket",
     desc: "Teamwork and strategy on the field.",
     date: "Will be announced soon",
     location: "-",
     team: "11 per team",
-    img: "https://image2url.com/r2/default/images/1770216942908-1dfc0066-a247-4525-8398-e4d39129c840.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770216917046-bfe17688-cbbf-458d-85d3-84558293c7ae.jpg",
-    link: "registration/cricket/reg.html"
+    img: "img/sports/landscape/cricket_1.avif",
+    imgPortrait: "img/sports/portrait/cricket_2.avif",
+    link: "/registration/cricket/reg.html"
   },
 
   { 
-    title: "Throw Ball", 
+    title: "Throw Ball",
     desc: "Fast reflexes and teamwork define the game.",
     date: "Will be announced soon",
     location: "-",
     team: "7 per team",
-    img: "https://image2url.com/r2/default/images/1770806733991-ab7ed690-4eb7-4878-ae78-0b7383d19b3b.png",
-    imgPortrait: "https://image2url.com/r2/default/images/1770806733991-ab7ed690-4eb7-4878-ae78-0b7383d19b3b.png",
-    link: "registration/throwball/reg.html"
+    img: "img/sports/landscape/throwball_1.avif",
+    imgPortrait: "img/sports/landscape/throwball_1.avif",
+    link: "/registration/throwball/reg.html"
   },
 
   { 
-    title: "Volleyball", 
+    title: "Volleyball",
     desc: "Energy and powerful spikes define this sport.",
     date: "Will be announced soon",
     location: "-",
     team: "6 per team",
-    img: "https://image2url.com/r2/default/images/1770218588979-774aba95-f91e-4043-bf79-0091cc3e0c98.png",
+    img: "img/sports/landscape/volleyball_1.avif",
     imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
-    link: "registration/volleyball/reg.html"
+    link: "/registration/volleyball/reg.html"
   },
 
   { 
-    title: "Football", 
+    title: "Football",
     desc: "Feel the thrill of every goal and play.",
     date: "Will be announced soon",
     location: "-",
     team: "11 per team",
-    img: "https://image2url.com/r2/default/images/1770216813175-e3d93620-bfde-472c-8111-13f81a7045bd.jpg",
-    imgPortrait: "https://image2url.com/r2/default/images/1770216752866-5280a394-f105-4238-8fee-d7ccce23cc69.jpg",
-    link: "registration/football/reg.html"
+    img: "img/sports/landscape/football_1.avif",
+    imgPortrait: "img/sports/portrait/football_2.avif",
+    link: "/registration/football/reg.html"
   }
 
 ];
-
-
 
 const track = document.getElementById('track');
 const bg = document.getElementById('bg-overlay');
@@ -168,6 +166,3 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
-
-
-
