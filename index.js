@@ -6,12 +6,10 @@ const sports = [
     date: "Will be announced soon",
     location: "-",
     team: "Solo",
-    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // landscape
-    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg", // portrait
-    link: "regestration/chess/chess_reg.html",
+    img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
+    imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
+    link: "registration/chess/chess_reg.html"
   },
-
-
 
   { 
     title: "Badminton", 
@@ -80,6 +78,7 @@ const sports = [
   }
 
 ];
+
 
 
 const track = document.getElementById('track');
@@ -169,4 +168,5 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
 
