@@ -3,19 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chess Tournament Registration</title>
+<title>Carrom Tournament Registration</title>
 <link rel="stylesheet" href="css.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-
 
 </head>
 
 <body>
 <div class="container">
 
-  <img src="chess_icon.png" alt="Chess Logo" class="logo">
-  <h1>Chess<br> Tournament Registration</h1>
-  <h2>Join the Ultimate Battle of Minds</h2>
+  <img src="carrom_icon.png" alt="Carrom Logo" class="logo">
+  <h1>Carrom<br> Tournament Registration</h1>
 
   <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSfwB_4PX9G73_b9AKytYz9g8BxUI7V3si4aCQ5uMPRkUeSVFQ/formResponse" method="POST" target="hidden_iframe">
 
@@ -69,6 +66,28 @@
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 </div>
 
-<script src="js.js"></script>
+<script>
+const form = document.getElementById("form");
+const messageDiv = document.getElementById("message");
+const submitButton = document.getElementById("submit-button");
+
+form.addEventListener("submit", function (e) {
+  // Show submitting message
+  messageDiv.style.display = "block";
+  messageDiv.textContent = "Submitting...";
+  messageDiv.className = "message";
+
+  submitButton.disabled = true;
+
+  // Simulate success
+  setTimeout(() => {
+    messageDiv.textContent = "Thank you! Your registration has been recorded.";
+    messageDiv.className = "message success";
+    form.reset();
+    submitButton.disabled = false;
+    setTimeout(() => { messageDiv.style.display = "none"; }, 3500);
+  }, 1500);
+});
+</script>
 </body>
 </html>

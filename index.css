@@ -27,7 +27,7 @@ body {
 }
 
 .college-logo {
-  width: 150px;
+  width: 60px;
   height: auto;
   border-radius: 12px;
   transition: transform 0.3s;
@@ -221,5 +221,4 @@ body {
 
 .header-banner:hover {
   transform: scale(1.05);
-
 }

@@ -8,7 +8,7 @@ const sports = [
     team: "Solo",
     img: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
     imgPortrait: "https://image2url.com/r2/default/images/1770216497200-9dab2257-f9f0-46fd-82cf-5d05777bd8f7.jpg",
-    link: "regestration/chess/chess_reg.html"   // NOT touched
+    link: "/regestration/chess/chess_reg.html"   // NOT touched
   },
 
   { 
@@ -30,7 +30,7 @@ const sports = [
     team: "Solo / 2 per team",
     img: "https://image2url.com/r2/default/images/1770218939437-8143fb2e-0ab0-4a9e-8038-8e07a2cc081b.jpeg",
     imgPortrait: "https://image2url.com/r2/default/images/1770218774659-a22f9d93-2794-4e88-aede-6fb13be7bb87.jpeg",
-    link: "registration/carrom/reg.html"
+    link: "/regestration/carrom/carrom_reg.html"
   },
 
   { 
