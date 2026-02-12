@@ -63,7 +63,7 @@ const sports = [
     team: "6 per team",
     img: "img/sports/landscape/volleyball_1.avif",
     imgPortrait: "https://image2url.com/r2/default/images/1770218562512-0a3acaaa-abe6-4790-948e-5b47795f5e17.png",
-    link: "/registration/volleyball/reg.html"
+    link: "regestration/volleyball/volleyball_reg.html"
   },
 
   { 
