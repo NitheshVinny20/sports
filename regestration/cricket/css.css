@@ -5,85 +5,122 @@
     --white: #ffffff;
 }
 
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    min-height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2000');
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: flex-start;
+    padding: 15px;
 }
 
+/* CARD */
 .card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    max-width: 1000px;
     width: 100%;
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     animation: slideUp 0.6s ease-out;
 }
 
+/* DESKTOP ENHANCEMENT */
+@media (min-width: 768px) {
+    .card {
+        padding: 40px;
+        border-radius: 24px;
+    }
+}
+
+/* ANIMATION */
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* HEADER */
 .header h1 {
     color: var(--pitch-green);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -1px;
-    margin-bottom: 5px;
+    font-size: 1.6rem;
 }
 
+@media (min-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* SECTION TITLE */
 .section-title {
     color: var(--white);
     background: var(--pitch-green);
-    padding: 8px 20px;
+    padding: 6px 16px;
     border-radius: 50px;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
-    margin: 30px 0 15px 0;
+    margin: 25px 0 15px 0;
 }
 
-/* Player Cards Animation */
+/* PLAYER BOX */
 .player-box {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    padding: 15px;
-    border-radius: 16px;
+    padding: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 12px;
+    transition: all 0.3s ease;
+    flex-wrap: wrap; /* Important for small screens */
 }
 
 .player-box:hover {
-    transform: scale(1.02);
+    transform: translateY(-2px);
     border-color: var(--pitch-green);
     background: white;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.08);
 }
 
+/* JERSEY NUMBER */
 .jersey-num {
     background: #e2e8f0;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     font-weight: bold;
+    font-size: 0.9rem;
     color: var(--pitch-green);
 }
 
-/* Floating Label Inputs */
-.floating { position: relative; margin-top: 10px; }
+/* FLOATING INPUT */
+.floating {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
 .floating input {
     width: 100%;
     padding: 12px;
@@ -91,6 +128,7 @@ body {
     border-radius: 10px;
     outline: none;
     background: transparent;
+    font-size: 0.9rem;
 }
 
 .floating label {
@@ -100,32 +138,56 @@ body {
     transform: translateY(-50%);
     color: #94a3b8;
     pointer-events: none;
-    transition: 0.2s;
+    transition: 0.2s ease;
+    font-size: 0.85rem;
 }
 
 .floating input:focus + label,
 .floating input:not(:placeholder-shown) + label {
-    top: 0;
-    font-size: 12px;
+    top: -8px;
+    font-size: 11px;
     background: white;
     padding: 0 5px;
     color: var(--pitch-green);
 }
 
+/* BUTTON */
 .btn {
     background: var(--cricket-red);
     color: white;
     width: 100%;
-    padding: 18px;
+    padding: 16px;
     border-radius: 12px;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 40px;
-    transition: 0.3s;
-    position: relative;
-    overflow: hidden;
+    margin-top: 30px;
+    transition: 0.3s ease;
 }
 
-.btn:hover { background: #991b1b; transform: translateY(-3px); }
+.btn:hover {
+    background: #991b1b;
+    transform: translateY(-2px);
+}
+
+/* SMALL DEVICE IMPROVEMENT */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .section-title {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+        padding: 14px;
+    }
+}
