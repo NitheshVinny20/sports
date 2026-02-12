@@ -1,0 +1,131 @@
+:root {
+    --pitch-green: #2d5a27;
+    --grass-light: #3e7b37;
+    --cricket-red: #b91c1c;
+    --white: #ffffff;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header h1 {
+    color: var(--pitch-green);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    color: var(--white);
+    background: var(--pitch-green);
+    padding: 8px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 30px 0 15px 0;
+}
+
+/* Player Cards Animation */
+.player-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.player-box:hover {
+    transform: scale(1.02);
+    border-color: var(--pitch-green);
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.jersey-num {
+    background: #e2e8f0;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    color: var(--pitch-green);
+}
+
+/* Floating Label Inputs */
+.floating { position: relative; margin-top: 10px; }
+.floating input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+}
+
+.floating label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.floating input:focus + label,
+.floating input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+    background: white;
+    padding: 0 5px;
+    color: var(--pitch-green);
+}
+
+.btn {
+    background: var(--cricket-red);
+    color: white;
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover { background: #991b1b; transform: translateY(-3px); }

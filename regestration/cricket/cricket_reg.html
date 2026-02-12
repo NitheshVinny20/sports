@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Team Registration</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="stadium-overlay"></div>
+
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <div class="cricket-icon">🏏</div>
+            <h1>Cricket Team Registration</h1>
+            <p>Squad of 15 • 11 Starters + 4 Bench</p>
+        </div>
+
+        <form id="teamForm" action="https://docs.google.com/forms/d/e/1FAIpQLSffgB5QK_QWs3UDUARYDdchCvhtWV4cQxdJ91ZwW5fFZh7qYQ/formResponse" method="POST" target="hidden_iframe">
+            
+            <div class="section-title">Team Leadership</div>
+            <div class="grid">
+                <div class="field floating">
+                    <input type="text" name="entry.1997065996" class="save-local" placeholder=" " required>
+                    <label>Team Name</label>
+                </div>
+                <div class="field floating">
+                    <input type="text" name="entry.2081326091" class="save-local" placeholder=" " required>
+                    <label>Captain Name</label>
+                </div>
+                <div class="field floating">
+                    <input type="text" name="entry.1127107364" class="save-local" placeholder=" " required>
+                    <label>Captain AUID</label>
+                </div>
+                <div class="field floating">
+                    <input type="tel" name="entry.2029844490" class="save-local" placeholder=" " required pattern="[0-9]{10}">
+                    <label>Mobile Number</label>
+                </div>
+            </div>
+
+            <div class="section-title">Starting XI</div>
+            <div class="roster-grid" id="starters-container"></div>
+
+            <div class="section-title sub-header">Reserves</div>
+            <div class="roster-grid" id="subs-container"></div>
+
+            <button type="submit" class="btn" id="submitBtn">
+                <span class="btn-text">Finalize Squad</span>
+                <div class="btn-loader"></div>
+            </button>
+        </form>
+
+        <div id="message" class="message"></div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>
