@@ -8,14 +8,20 @@
 </head>
 <body>
 
-<div class="stadium-overlay"></div>
-
 <div class="container">
-    <div class="card">
+    <div class="card" id="main-card">
         <div class="header">
-            <img src="cricket.png" alt="Cricket Logo" class="logo"><br>
+            <div class="gender-nav">
+                <span class="nav-label">Male</span>
+                <label class="switch">
+                    <input type="checkbox" id="gender-toggle" onchange="toggleGender()">
+                    <span class="slider round"></span>
+                </label>
+                <span class="nav-label">Female</span>
+            </div>
+            
             <h1>Cricket Team Registration</h1>
-            <p>Squad of 15 • 11 Starters + 4 Bench</p>
+            <p>Squad of 15 • 1 Captain + 10 Starters + 4 Bench</p>
         </div>
 
         <form id="teamForm" action="https://docs.google.com/forms/d/e/1FAIpQLSffgB5QK_QWs3UDUARYDdchCvhtWV4cQxdJ91ZwW5fFZh7qYQ/formResponse" method="POST" target="hidden_iframe">
@@ -23,7 +29,7 @@
             <div class="section-title">Team Leadership</div>
             <div class="grid">
                 <div class="field floating">
-                    <input type="text" name="entry.1997065996" class="save-local" placeholder="" required>
+                    <input type="text" name="entry.1997065996" class="save-local" placeholder=" " required>
                     <label>Team Name</label>
                 </div>
                 <div class="field floating">
@@ -40,19 +46,15 @@
                 </div>
             </div>
 
-            <div class="section-title">Starting XI</div>
+            <div class="section-title">Starting XI (Players 2-11)</div>
             <div class="roster-grid" id="starters-container"></div>
 
-            <div class="section-title sub-header">Reserves</div>
+            <div class="section-title sub-header">Reserves (Substitute 1-4)</div>
             <div class="roster-grid" id="subs-container"></div>
 
-            <button type="submit" class="btn" id="submitBtn">
-                <span class="btn-text">Finalize Squad</span>
-                <div class="btn-loader"></div>
-            </button>
+            <button type="submit" class="btn" id="submitBtn">Finalize Squad</button>
         </form>
 
-        <div id="message" class="message"></div>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
 </div>

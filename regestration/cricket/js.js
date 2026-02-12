@@ -18,33 +18,37 @@ const subsMap = [
     { n: "entry.458879777", i: "entry.376119018" }   // Sub 4
 ];
 
-// Dynamically create fields
+// Initialize Roster Containers
 const startersContainer = document.getElementById('starters-container');
-startersMap.forEach((p, idx) => {
-    startersContainer.innerHTML += `
-        <div class="player-box">
-            <div class="jersey-num">${idx + 2}</div>
-            <div style="flex:1">
-                <input type="text" name="${p.n}" class="save-local" placeholder="Player Name">
-                <input type="text" name="${p.i}" class="save-local" placeholder="AUID">
-            </div>
-        </div>`;
-});
+if (startersContainer) {
+    startersMap.forEach((p, idx) => {
+        startersContainer.innerHTML += `
+            <div class="player-box">
+                <div class="jersey-num">${idx + 2}</div>
+                <div style="flex:1">
+                    <input type="text" name="${p.n}" class="save-local" placeholder="Player Name">
+                    <input type="text" name="${p.i}" class="save-local" placeholder="AUID">
+                </div>
+            </div>`;
+    });
+}
 
 const subsContainer = document.getElementById('subs-container');
-subsMap.forEach((p, idx) => {
-    subsContainer.innerHTML += `
-        <div class="player-box sub-card">
-            <div class="jersey-num">R${idx + 1}</div>
-            <div style="flex:1">
-                <input type="text" name="${p.n}" class="save-local" placeholder="Reserve Name">
-                <input type="text" name="${p.i}" class="save-local" placeholder="AUID">
-            </div>
-        </div>`;
-});
+if (subsContainer) {
+    subsMap.forEach((p, idx) => {
+        subsContainer.innerHTML += `
+            <div class="player-box">
+                <div class="jersey-num">R${idx + 1}</div>
+                <div style="flex:1">
+                    <input type="text" name="${p.n}" class="save-local" placeholder="Reserve Name">
+                    <input type="text" name="${p.i}" class="save-local" placeholder="AUID">
+                </div>
+            </div>`;
+    });
+}
 
 // Auto-Save Logic
-const allInputs = document.querySelectorAll('.save-local');
+const allInputs = document.querySelectorAll('.save-local, .floating input');
 window.onload = () => {
     allInputs.forEach(input => {
         const val = localStorage.getItem('cricketSquad_' + input.name);
@@ -58,12 +62,23 @@ allInputs.forEach(input => {
     });
 });
 
-// Submission Animation
+// Navigation Toggle Logic
+function toggleGender() {
+    const isChecked = document.getElementById('gender-toggle').checked;
+    const card = document.querySelector('.card');
+    card.classList.add('slide-out');
+    
+    setTimeout(() => {
+        // Redirect to female.html if checked, otherwise stay/return to cricket_reg.html
+        window.location.href = isChecked ? 'female.html' : 'cricket_reg.html';
+    }, 500);
+}
+
+// Submission Handling
 document.getElementById('teamForm').addEventListener('submit', function() {
     const btn = document.getElementById('submitBtn');
     btn.innerHTML = "Sending to Pavilion...";
-    btn.style.opacity = "0.7";
-    
+    btn.disabled = true;
     setTimeout(() => {
         localStorage.clear();
         alert("Squad Registered! Good luck for the match.");
