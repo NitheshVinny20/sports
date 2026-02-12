@@ -84,4 +84,19 @@ document.getElementById('teamForm').addEventListener('submit', function() {
         alert("Squad Registered! Good luck for the match.");
         location.reload();
     }, 2000);
+
+});
+
+// FIX: Force reset when navigating back (Mobile Browser Bug)
+window.addEventListener('pageshow', function(event) {
+    const card = document.getElementById('reg-card');
+    const logo = document.getElementById('nav-logo');
+    
+    // If persisted is true, the page was loaded from cache (back button)
+    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        if (card) card.classList.remove('slide-out');
+        if (logo) logo.classList.remove('flipping');
+        // Optional: Uncomment below if you want the form cleared on back button
+        // document.getElementById("form").reset(); 
+    }
 });
