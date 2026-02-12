@@ -145,6 +145,7 @@ input:focus, select:focus {
 @keyframes slideUp {
   to { opacity: 1; transform: translateY(0); }
 }
+
 /* Fixed Floating Dock */
 .fixed-dock {
     position: fixed;

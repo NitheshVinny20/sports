@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throwball Registration - Male</title>
+    <style>
+        :root { --navy: #1e293b; --gold: #eab308; --slate: #f1f5f9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), 
+                        url('https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80&w=2000') center/cover fixed;
+            font-family: 'Inter', sans-serif;
+            display: flex; justify-content: center; padding: 15px;
+        }
+        .card { background: #fff; width: 100%; max-width: 900px; border-radius: 20px; padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        header { text-align: center; margin-bottom: 25px; border-bottom: 4px solid var(--gold); padding-bottom: 15px; }
+        .section-title { color: white; background: var(--navy); padding: 6px 16px; border-radius: 4px; display: inline-block; font-size: 0.75rem; font-weight: bold; margin: 20px 0 10px 0; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+        .player-box { background: var(--slate); border: 1px solid #e2e8f0; padding: 12px; border-radius: 10px; display: flex; align-items: center; gap: 10px; }
+        .num { background: var(--gold); color: var(--navy); width: 30px; height: 30px; min-width: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; font-size: 0.8rem; }
+        input { width: 100%; padding: 10px; margin: 3px 0; border: 1px solid #cbd5e1; border-radius: 6px; outline: none; font-size: 14px; }
+        .btn { background: var(--navy); color: var(--gold); width: 100%; padding: 18px; border-radius: 10px; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-top: 30px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <header><h1>Throwball Men's Trophy</h1></header>
+    <form id="teamForm" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="hidden_iframe">
+        <div class="section-title">Leadership</div>
+        <div class="grid">
+            <input type="text" name="t_name" class="save-local" placeholder="Team Name" required>
+            <input type="text" name="c_name" class="save-local" placeholder="Captain Name" required>
+            <input type="text" name="c_auid" class="save-local" placeholder="Captain AUID" required>
+            <input type="tel" name="c_phone" class="save-local" placeholder="Mobile Number" required>
+        </div>
+        <div class="section-title">Starting 7 (P2-P7)</div>
+        <div class="grid" id="starters"></div>
+        <div class="section-title" style="background:var(--gold); color:var(--navy)">Reserve Player</div>
+        <div class="grid">
+            <div class="player-box">
+                <div class="num">S1</div>
+                <div style="flex:1">
+                    <input type="text" name="s1n" class="save-local" placeholder="Substitute Name">
+                    <input type="text" name="s1i" class="save-local" placeholder="AUID">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn">Register Team</button>
+    </form>
+</div>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+    const sCont = document.getElementById('starters');
+    for(let i=2; i<=7; i++){
+        sCont.innerHTML += `<div class="player-box"><div class="num">${i}</div><div style="flex:1"><input type="text" name="p${i}n" class="save-local" placeholder="Player Name"><input type="text" name="p${i}i" class="save-local" placeholder="AUID"></div></div>`;
+    }
+    const inputs = document.querySelectorAll('.save-local');
+    window.onload = () => { inputs.forEach(input => { const val = localStorage.getItem('tb_m_' + input.name); if (val) input.value = val; }); };
+    inputs.forEach(input => { input.addEventListener('input', () => localStorage.setItem('tb_m_' + input.name, input.value)); });
+</script>
+</body>
+</html>
