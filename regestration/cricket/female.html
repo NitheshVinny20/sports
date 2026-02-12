@@ -213,36 +213,27 @@
 </div>
 
 <script>
-  // FORCE RELOAD ON BACK BUTTON (Fixes the mobile cache bug)
-window.addEventListener('pageshow', function(event) {
-    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-        window.location.reload(); 
-    }
-});
+    const startersMap = [
+        { n: "entry.164796864", i: "entry.466232286" },
+        { n: "entry.279343295", i: "entry.590979872" },
+        { n: "entry.1906076037", i: "entry.96241058" },
+        { n: "entry.908985867", i: "entry.1159611705" },
+        { n: "entry.1988112041", i: "entry.1539910648" },
+        { n: "entry.1685335114", i: "entry.1156136104" },
+        { n: "entry.2103729441", i: "entry.1761177781" },
+        { n: "entry.911277598", i: "entry.1938205651" },
+        { n: "entry.1635033387", i: "entry.1366413584" },
+        { n: "entry.1971252509", i: "entry.2125999837" }
+    ];
 
-const startersMap = [
-    { n: "entry.164796864", i: "entry.466232286" },
-    { n: "entry.279343295", i: "entry.590979872" },
-    { n: "entry.1906076037", i: "entry.96241058" },
-    { n: "entry.908985867", i: "entry.1159611705" },
-    { n: "entry.1988112041", i: "entry.1539910648" },
-    { n: "entry.1685335114", i: "entry.1156136104" },
-    { n: "entry.2103729441", i: "entry.1761177781" },
-    { n: "entry.911277598", i: "entry.1938205651" },
-    { n: "entry.1635033387", i: "entry.1366413584" },
-    { n: "entry.1971252509", i: "entry.2125999837" }
-];
+    const subsMap = [
+        { n: "entry.357225766", i: "entry.1982817856" },
+        { n: "entry.1284111609", i: "entry.1497776436" },
+        { n: "entry.1563974988", i: "entry.342922246" },
+        { n: "entry.458879777", i: "entry.376119018" }
+    ];
 
-const subsMap = [
-    { n: "entry.357225766", i: "entry.1982817856" },
-    { n: "entry.1284111609", i: "entry.1497776436" },
-    { n: "entry.1563974988", i: "entry.342922246" },
-    { n: "entry.458879777", i: "entry.376119018" }
-];
-
-// Initialize Roster
-const startersContainer = document.getElementById('starters-container');
-if (startersContainer) {
+    const startersContainer = document.getElementById('starters-container');
     startersMap.forEach((p, idx) => {
         startersContainer.innerHTML += `
             <div class="player-box">
@@ -253,10 +244,8 @@ if (startersContainer) {
                 </div>
             </div>`;
     });
-}
 
-const subsContainer = document.getElementById('subs-container');
-if (subsContainer) {
+    const subsContainer = document.getElementById('subs-container');
     subsMap.forEach((p, idx) => {
         subsContainer.innerHTML += `
             <div class="player-box">
@@ -267,47 +256,42 @@ if (subsContainer) {
                 </div>
             </div>`;
     });
-}
 
-// Auto-Save and Load
-const allInputs = document.querySelectorAll('.save-local, .field input');
-window.onload = () => {
+    const allInputs = document.querySelectorAll('.save-local, .floating input');
+    window.onload = () => {
+        allInputs.forEach(input => {
+            const val = localStorage.getItem('femaleCricketSquad_' + input.name);
+            if (val) input.value = val;
+        });
+    };
+
     allInputs.forEach(input => {
-        const val = localStorage.getItem('cricketSquad_' + input.name);
-        if (val) input.value = val;
+        input.addEventListener('input', () => {
+            localStorage.setItem('femaleCricketSquad_' + input.name, input.value);
+        });
     });
-};
 
-allInputs.forEach(input => {
-    input.addEventListener('input', () => {
-        localStorage.setItem('cricketSquad_' + input.name, input.value);
-    });
-});
-
-// Navigation Toggle with animation fix
-function toggleGender() {
-    const isChecked = document.getElementById('gender-toggle').checked;
-    const card = document.getElementById('reg-card'); // Fixed selection
-    
-    if (card) {
+    function toggleGender() {
+        const isChecked = document.getElementById('gender-toggle').checked;
+        const card = document.querySelector('.card');
         card.classList.add('slide-out');
+        
         setTimeout(() => {
+            // Redirect to male version (assuming index.html or cricket_reg.html)
             window.location.href = isChecked ? 'female.html' : 'cricket_reg.html';
         }, 500);
     }
-}
 
-// Submission
-document.getElementById('teamForm').addEventListener('submit', function() {
-    const btn = document.getElementById('submitBtn');
-    btn.innerHTML = "Sending to Pavilion...";
-    btn.disabled = true;
-    setTimeout(() => {
-        localStorage.clear();
-        alert("Squad Registered! Good luck.");
-        location.reload();
-    }, 2000);
-});
+    document.getElementById('teamForm').addEventListener('submit', function() {
+        const btn = document.getElementById('submitBtn');
+        btn.innerHTML = "Submitting Squad...";
+        btn.disabled = true;
+        setTimeout(() => {
+            localStorage.clear();
+            alert("Female Squad Registered! Good luck!");
+            location.reload();
+        }, 2000);
+    });
 </script>
 </body>
 <footer class="fixed-dock">
