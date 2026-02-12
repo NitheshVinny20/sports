@@ -1,24 +1,31 @@
+// FORCE RELOAD ON BACK BUTTON (Fixes the mobile cache bug)
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        window.location.reload(); 
+    }
+});
+
 const startersMap = [
-    { n: "entry.164796864", i: "entry.466232286" }, // P2
-    { n: "entry.279343295", i: "entry.590979872" }, // P3
-    { n: "entry.1906076037", i: "entry.96241058" }, // P4
-    { n: "entry.908985867", i: "entry.1159611705" }, // P5
-    { n: "entry.1988112041", i: "entry.1539910648" }, // P6
-    { n: "entry.1685335114", i: "entry.1156136104" }, // P7
-    { n: "entry.2103729441", i: "entry.1761177781" }, // P8
-    { n: "entry.911277598", i: "entry.1938205651" }, // P9
-    { n: "entry.1635033387", i: "entry.1366413584" }, // P10
-    { n: "entry.1971252509", i: "entry.2125999837" }  // P11
+    { n: "entry.164796864", i: "entry.466232286" },
+    { n: "entry.279343295", i: "entry.590979872" },
+    { n: "entry.1906076037", i: "entry.96241058" },
+    { n: "entry.908985867", i: "entry.1159611705" },
+    { n: "entry.1988112041", i: "entry.1539910648" },
+    { n: "entry.1685335114", i: "entry.1156136104" },
+    { n: "entry.2103729441", i: "entry.1761177781" },
+    { n: "entry.911277598", i: "entry.1938205651" },
+    { n: "entry.1635033387", i: "entry.1366413584" },
+    { n: "entry.1971252509", i: "entry.2125999837" }
 ];
 
 const subsMap = [
-    { n: "entry.357225766", i: "entry.1982817856" }, // Sub 1
-    { n: "entry.1284111609", i: "entry.1497776436" }, // Sub 2
-    { n: "entry.1563974988", i: "entry.342922246" }, // Sub 3
-    { n: "entry.458879777", i: "entry.376119018" }   // Sub 4
+    { n: "entry.357225766", i: "entry.1982817856" },
+    { n: "entry.1284111609", i: "entry.1497776436" },
+    { n: "entry.1563974988", i: "entry.342922246" },
+    { n: "entry.458879777", i: "entry.376119018" }
 ];
 
-// Initialize Roster Containers
+// Initialize Roster
 const startersContainer = document.getElementById('starters-container');
 if (startersContainer) {
     startersMap.forEach((p, idx) => {
@@ -47,8 +54,8 @@ if (subsContainer) {
     });
 }
 
-// Auto-Save Logic
-const allInputs = document.querySelectorAll('.save-local, .floating input');
+// Auto-Save and Load
+const allInputs = document.querySelectorAll('.save-local, .field input');
 window.onload = () => {
     allInputs.forEach(input => {
         const val = localStorage.getItem('cricketSquad_' + input.name);
@@ -62,26 +69,27 @@ allInputs.forEach(input => {
     });
 });
 
-// Navigation Toggle Logic
+// Navigation Toggle with animation fix
 function toggleGender() {
     const isChecked = document.getElementById('gender-toggle').checked;
-    const card = document.querySelector('.card');
-    card.classList.add('slide-out');
+    const card = document.getElementById('reg-card'); // Fixed selection
     
-    setTimeout(() => {
-        // Redirect to female.html if checked, otherwise stay/return to cricket_reg.html
-        window.location.href = isChecked ? 'female.html' : 'cricket_reg.html';
-    }, 500);
+    if (card) {
+        card.classList.add('slide-out');
+        setTimeout(() => {
+            window.location.href = isChecked ? 'female.html' : 'cricket_reg.html';
+        }, 500);
+    }
 }
 
-// Submission Handling
+// Submission
 document.getElementById('teamForm').addEventListener('submit', function() {
     const btn = document.getElementById('submitBtn');
     btn.innerHTML = "Sending to Pavilion...";
     btn.disabled = true;
     setTimeout(() => {
         localStorage.clear();
-        alert("Squad Registered! Good luck for the match.");
+        alert("Squad Registered! Good luck.");
         location.reload();
     }, 2000);
 });
