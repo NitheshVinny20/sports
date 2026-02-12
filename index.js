@@ -41,7 +41,7 @@ const sports = [
     team: "11 per team",
     img: "img/sports/landscape/cricket_1.avif",
     imgPortrait: "img/sports/portrait/cricket_2.avif",
-    link: "/registration/cricket/reg.html"
+    link: "regestration/cricket/cricket_reg.html"
   },
 
   { 
@@ -166,5 +166,6 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
 
 
