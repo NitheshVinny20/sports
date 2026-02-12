@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket Team Registration</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Cricket Registration - Male</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
@@ -20,8 +23,8 @@
                 <span class="nav-label">Female</span>
             </div>
             
-            <h1>Cricket Team Registration</h1>
-            <p>Squad of 15 • 1 Captain + 10 Starters + 4 Bench</p>
+            <h1>Cricket Registration</h1>
+            <p>Male Squad • 11 Starters + 2 Bench</p>
         </div>
 
         <form id="teamForm" action="https://docs.google.com/forms/d/e/1FAIpQLSffgB5QK_QWs3UDUARYDdchCvhtWV4cQxdJ91ZwW5fFZh7qYQ/formResponse" method="POST" target="hidden_iframe">
@@ -49,18 +52,16 @@
             <div class="section-title">Starting XI (Players 2-11)</div>
             <div class="roster-grid" id="starters-container"></div>
 
-            <div class="section-title sub-header">Reserves (Substitute 1-4)</div>
+            <div class="section-title sub-header">Reserves (Substitute 1-2)</div>
             <div class="roster-grid" id="subs-container"></div>
 
-            <button type="submit" class="btn" id="submitBtn">Finalize Squad</button>
+            <button type="submit" class="btn" id="submitBtn">Finalize Male Squad</button>
         </form>
 
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
 </div>
 
-<script src="js.js"></script>
-</body>
 <footer class="fixed-dock">
     <div class="dock-links">
         <a href="../../index.html" title="Home">🏠</a>
@@ -69,4 +70,7 @@
         <a href="#" title="Support">📞</a>
     </div>
 </footer>
+
+<script src="js.js"></script>
+</body>
 </html>
