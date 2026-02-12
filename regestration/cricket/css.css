@@ -28,119 +28,40 @@ body {
     padding: clamp(20px, 5vw, 40px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.5s ease-in, opacity 0.5s;
+    position: relative;
 }
 
-/* Page Transition Animation */
-.slide-out { transform: translateX(-100%); opacity: 0; }
+/* Fix for animation getting stuck */
+.slide-out { transform: translateX(-120%) rotateY(-20deg); opacity: 0; pointer-events: none; }
 
-/* Gender Toggle Navigation */
-.gender-nav { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 15px; 
-    margin-bottom: 30px; 
-    border-bottom: 1px solid #e2e8f0; 
-    padding-bottom: 15px; 
-}
+.gender-nav { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; }
 .switch { position: relative; width: 60px; height: 30px; }
 .switch input { opacity: 0; width: 0; height: 0; }
-.slider { 
-    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
-    background-color: #1e3a8a; transition: .4s; border-radius: 34px; 
-}
-.slider:before { 
-    position: absolute; content: ""; height: 22px; width: 22px; 
-    left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; 
-}
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #1e3a8a; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 22px; width: 22px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
 input:checked + .slider { background-color: #db2777; }
 input:checked + .slider:before { transform: translateX(30px); }
 .nav-label { font-weight: bold; color: #64748b; font-size: 0.9rem; }
 
-/* Responsive Grid Layouts */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
 .roster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
 
-.section-title { 
-    color: var(--white); background: var(--pitch-green); padding: 6px 16px; 
-    border-radius: 50px; display: inline-block; font-size: 0.75rem; font-weight: bold; 
-    margin: 25px 0 15px 0; 
-}
+.section-title { color: var(--white); background: var(--pitch-green); padding: 6px 16px; border-radius: 50px; display: inline-block; font-size: 0.75rem; font-weight: bold; margin: 25px 0 15px 0; }
 .sub-header { background: var(--cricket-red); }
 
-.player-box { 
-    background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 14px; 
-    display: flex; align-items: center; gap: 12px; transition: 0.3s; 
-}
+.player-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 14px; display: flex; align-items: center; gap: 12px; transition: 0.3s; }
 .player-box:hover { border-color: var(--pitch-green); background: white; transform: translateY(-2px); }
+.jersey-num { background: #e2e8f0; width: 32px; height: 32px; min-width: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; color: var(--pitch-green); }
 
-.jersey-num { 
-    background: #e2e8f0; width: 32px; height: 32px; min-width: 32px; 
-    display: flex; align-items: center; justify-content: center; border-radius: 50%; 
-    font-weight: bold; color: var(--pitch-green); 
-}
-
-/* Floating Label Logic */
 .floating { position: relative; width: 100%; margin-top: 10px; }
-.floating input { 
-    width: 100%; padding: 12px; border: 2px solid #e2e8f0; 
-    border-radius: 10px; outline: none; background: transparent; 
-}
-.floating label { 
-    position: absolute; left: 12px; top: 50%; transform: translateY(-50%); 
-    color: #94a3b8; pointer-events: none; transition: 0.2s ease; 
-}
-.floating input:focus + label, .floating input:not(:placeholder-shown) + label { 
-    top: -8px; font-size: 11px; background: white; padding: 0 5px; color: var(--pitch-green); 
-}
+.floating input { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; outline: none; background: transparent; }
+.floating label { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94a3b8; pointer-events: none; transition: 0.2s ease; }
+.floating input:focus + label, .floating input:not(:placeholder-shown) + label { top: -8px; font-size: 11px; background: white; padding: 0 5px; color: var(--pitch-green); }
 
-.btn { 
-    background: var(--cricket-red); color: white; width: 100%; padding: 16px; 
-    border-radius: 12px; border: none; font-size: 1rem; font-weight: bold; 
-    cursor: pointer; margin-top: 30px; transition: 0.3s; 
-}
+.btn { background: var(--cricket-red); color: white; width: 100%; padding: 16px; border-radius: 12px; border: none; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 30px; transition: 0.3s; }
 
-
-/* Fixed Floating Dock */
-.fixed-dock {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%); /* Centers the dock */
-    z-index: 9999;
-    width: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.dock-links {
-    display: flex;
-    gap: 25px;
-    background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 12px 25px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
-}
-
-.dock-links a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: grayscale(1) brightness(2); /* Keeps icons minimalist/white */
-}
-
-.dock-links a:hover {
-    transform: translateY(-5px) scale(1.2);
-    filter: grayscale(0) brightness(1); /* Returns color on hover */
-}
-
-/* Adds padding to the bottom of the container so the form doesn't get hidden behind the dock */
-.container {
-    padding-bottom: 100px; 
-}
+.fixed-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: auto; display: flex; justify-content: center; }
+.dock-links { display: flex; gap: 25px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 12px 25px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3); }
+.dock-links a { text-decoration: none; font-size: 1.5rem; transition: 0.3s; filter: grayscale(1) brightness(2); }
+.dock-links a:hover { transform: translateY(-5px); filter: grayscale(0) brightness(1); }
+.container { padding-bottom: 100px; }
