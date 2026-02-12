@@ -3,48 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badminton Tournament Registration</title>
+    <title>Badminton Duo - Male</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="card">
+    <div class="card" id="reg-card">
         <div class="header">
-            <img src="badminton.png" alt="Badminton Logo" class="logo">
-            <h1>Badminton</h1>
-            <p>Tournament Registration</p>
+            <img src="badminton.png" alt="Badminton Logo" class="logo" id="nav-logo" onclick="flipAndNavigate('female.html')">
+            <h1>Badminton Duo</h1>
+            <p>Male Category • Duo Registration</p>
         </div>
 
         <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLScgNHJi2uYloWTSTUSGEXxTtIAVHLMKh2qCxRnCioDhbYrumg/formResponse" method="POST" target="hidden_iframe">
             
             <div class="field">
-                <label>Full Name</label>
-                <input type="text" name="entry.823367903" placeholder="Enter your full name" required>
+                <label>Duo / Team Name</label>
+                <input type="text" name="entry.1414280774" placeholder="Enter team name" required>
             </div>
 
-            <div class="field">
-                <label>College ID / AUID</label>
-                <input type="text" name="entry.1220683438" placeholder="Enter your ID" required>
+            <div class="section-divider">Player 1 (Captain)</div>
+            <div class="grid">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="entry.823367903" placeholder="Name" required>
+                </div>
+                <div class="field">
+                    <label>AUID</label>
+                    <input type="text" name="entry.1220683438" placeholder="ID" required>
+                </div>
+            </div>
+
+            <div class="section-divider">Player 2</div>
+            <div class="grid">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="entry.1099826463" placeholder="Name" required>
+                </div>
+                <div class="field">
+                    <label>AUID</label>
+                    <input type="text" name="entry.800390544" placeholder="ID" required>
+                </div>
             </div>
 
             <div class="grid">
                 <div class="field">
                     <label>Department</label>
                     <select name="entry.1418684154" required>
-                        <option value="">Select Department</option>
-<option value="CS">CS</option>
-<option value="ADFT">ADFT</option>
-<option value="AE">AE</option>
-<option value="ARC">ARC</option>
-<option value="ECE">ECE</option>
-<option value="EE">EE</option>
-<option value="EVT">EVT</option>
-<option value="ME">ME</option>
-
+                        <option value="">Select</option>
+                        <option value="CS">CS</option>
+                        <option value="ADFT">ADFT</option>
+                        <option value="AE">AE</option>
+                        <option value="ARC">ARC</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EVT">EVT</option>
+                        <option value="ME">ME</option>
                     </select>
                 </div>
-
                 <div class="field">
                     <label>Semester</label>
                     <select name="entry.1913456757" required>
@@ -57,16 +73,11 @@
             </div>
 
             <div class="field">
-                <label>Mobile Number</label>
-                <input type="tel" name="entry.602067814" placeholder="10-digit phone number" required pattern="[0-9]{10}">
+                <label>Mobile Number (Captain)</label>
+                <input type="tel" name="entry.602067814" placeholder="10-digit number" required pattern="[0-9]{10}">
             </div>
 
-            <div class="field">
-                <label>Email Address</label>
-                <input type="email" name="entry.528041579" placeholder="Enter your email" required>
-            </div>
-
-            <button class="btn" type="submit" id="submit-button">Register Now</button>
+            <button class="btn" type="submit" id="submit-button">Register Male Duo</button>
         </form>
 
         <div id="message" class="message"></div>
