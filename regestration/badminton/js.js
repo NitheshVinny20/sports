@@ -1,7 +1,7 @@
 // Navigation with Logo Flip
 function flipAndNavigate(targetUrl) {
     const logo = document.getElementById('nav-logo');
-    const card = document.getElementById('reg-card');
+    const card = document.getElementById('reg-card'); // Corrected from .card
 
     // Start animations
     logo.classList.add('flipping');

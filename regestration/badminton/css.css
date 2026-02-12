@@ -55,13 +55,12 @@ input:focus, select:focus { border-color: #2a5298; }
 .message { display: none; text-align: center; margin-top: 20px; padding: 10px; border-radius: 8px; }
 .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
 
-
 /* Fixed Floating Dock */
 .fixed-dock {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Centers the dock */
+    transform: translateX(-50%);
     z-index: 9999;
     width: auto;
     display: flex;
@@ -71,7 +70,7 @@ input:focus, select:focus { border-color: #2a5298; }
 .dock-links {
     display: flex;
     gap: 25px;
-    background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 12px 25px;
@@ -87,15 +86,12 @@ input:focus, select:focus { border-color: #2a5298; }
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: grayscale(1) brightness(2); /* Keeps icons minimalist/white */
+    filter: grayscale(1) brightness(2);
 }
 
 .dock-links a:hover {
     transform: translateY(-5px) scale(1.2);
-    filter: grayscale(0) brightness(1); /* Returns color on hover */
+    filter: grayscale(0) brightness(1);
 }
 
-/* Adds padding to the bottom of the container so the form doesn't get hidden behind the dock */
-.container {
-    padding-bottom: 100px; 
-}
+.container { padding-bottom: 100px; }
