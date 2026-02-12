@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Tournament Registration</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-card">
+        <header>
+            <div class="icon-circle">🏐</div>
+            <h1>Volleyball</h1>
+            <p>6 Players/ Team • Autosave Enabled</p>
+        </header>
+
+        <form id="teamForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfWPQoEzfXvn_nGo0o5x7kftC1xn6GkwvtTs9jZvfZn_rBl8g/formResponse" method="POST" target="hidden_iframe">
+            
+            <div class="form-section header-fields">
+                <input type="text" name="entry.1997065996" class="save-local" placeholder="Team Name" required>
+                <input type="text" name="entry.2081326091" class="save-local" placeholder="Captain Name" required>
+                <input type="text" name="entry.1127107364" class="save-local" placeholder="Captain AUID" required>
+                <input type="tel" name="entry.2029844490" class="save-local" placeholder="Mobile Number" required pattern="[0-9]{10}">
+            </div>
+
+            <h3 class="label-tag">Starting 6</h3>
+            <div class="player-grid" id="starters-container"></div>
+
+            <h3 class="label-tag reserve">Reserves</h3>
+            <div class="player-grid" id="subs-container"></div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Finalize Team</button>
+        </form>
+    </div>
+</div>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<div id="successModal" class="modal-overlay">
+    <div class="modal-card">
+        <div class="success-check">✓</div>
+        <h2>Squad Ready!</h2>
+        <p>Your team <strong id="summary-team"></strong> is registered.</p>
+        <button onclick="location.reload()" class="modal-btn">Close</button>
+    </div>
+</div>
+
+<div id="successModal" class="modal-overlay">
+    <div class="modal-card">
+        <div class="check-icon">✓</div>
+        <h2>Squad Ready!</h2>
+        <p>Your team <strong id="summary-team"></strong> is registered for the tournament.</p>
+        <button onclick="location.reload()" class="modal-btn">Back to Home</button>
+    </div>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>
