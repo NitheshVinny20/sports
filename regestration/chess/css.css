@@ -145,44 +145,46 @@ input:focus, select:focus {
 @keyframes slideUp {
   to { opacity: 1; transform: translateY(0); }
 }
-.footer-nav {
-    width: 100%;
-    margin-top: 40px;
-    padding: 20px 0;
+/* Fixed Floating Dock */
+.fixed-dock {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the dock */
+    z-index: 9999;
+    width: auto;
     display: flex;
     justify-content: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-links {
+.dock-links {
     display: flex;
-    gap: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     padding: 12px 25px;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
 }
 
-.nav-links a {
+.dock-links a {
     text-decoration: none;
-    font-size: 1.4rem;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: grayscale(1) brightness(2); /* Makes icons look white/minimalist */
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(1) brightness(2); /* Keeps icons minimalist/white */
 }
 
-.nav-links a:hover {
+.dock-links a:hover {
     transform: translateY(-5px) scale(1.2);
-    filter: grayscale(0) brightness(1); /* Restores color on hover */
+    filter: grayscale(0) brightness(1); /* Returns color on hover */
 }
 
-.icon {
-    display: block;
-    line-height: 1;
-}
-
-/* Adjust container to give footer space */
+/* Adds padding to the bottom of the container so the form doesn't get hidden behind the dock */
 .container {
-    padding-bottom: 20px;
+    padding-bottom: 100px; 
 }
