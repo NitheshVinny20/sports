@@ -1,4 +1,4 @@
-// FORCE RELOAD ON BACK BUTTON (Fixes the mobile cache bug)
+// AGGRESSIVE FIX: Force hard reload when navigating back to reset animations
 window.addEventListener('pageshow', function(event) {
     if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
         window.location.reload(); 
@@ -19,17 +19,15 @@ const startersMap = [
 ];
 
 const subsMap = [
-    { n: "entry.357225766", i: "entry.1982817856" },
-    { n: "entry.1284111609", i: "entry.1497776436" },
-    { n: "entry.1563974988", i: "entry.342922246" },
-    { n: "entry.458879777", i: "entry.376119018" }
+    { n: "entry.357225766", i: "entry.1982817856" }, // Sub 1
+    { n: "entry.1284111609", i: "entry.1497776436" }  // Sub 2
 ];
 
-// Initialize Roster
-const startersContainer = document.getElementById('starters-container');
-if (startersContainer) {
+// Initialize Containers
+const sCont = document.getElementById('starters-container');
+if (sCont) {
     startersMap.forEach((p, idx) => {
-        startersContainer.innerHTML += `
+        sCont.innerHTML += `
             <div class="player-box">
                 <div class="jersey-num">${idx + 2}</div>
                 <div style="flex:1">
@@ -40,10 +38,10 @@ if (startersContainer) {
     });
 }
 
-const subsContainer = document.getElementById('subs-container');
-if (subsContainer) {
+const bCont = document.getElementById('subs-container');
+if (bCont) {
     subsMap.forEach((p, idx) => {
-        subsContainer.innerHTML += `
+        bCont.innerHTML += `
             <div class="player-box">
                 <div class="jersey-num">R${idx + 1}</div>
                 <div style="flex:1">
@@ -54,8 +52,8 @@ if (subsContainer) {
     });
 }
 
-// Auto-Save and Load
-const allInputs = document.querySelectorAll('.save-local, .field input');
+// Auto-Save Logic
+const allInputs = document.querySelectorAll('.save-local, .floating input');
 window.onload = () => {
     allInputs.forEach(input => {
         const val = localStorage.getItem('cricketSquad_' + input.name);
@@ -69,11 +67,10 @@ allInputs.forEach(input => {
     });
 });
 
-// Navigation Toggle with animation fix
+// Transition Logic
 function toggleGender() {
     const isChecked = document.getElementById('gender-toggle').checked;
-    const card = document.getElementById('reg-card'); // Fixed selection
-    
+    const card = document.getElementById('main-card');
     if (card) {
         card.classList.add('slide-out');
         setTimeout(() => {
@@ -82,14 +79,14 @@ function toggleGender() {
     }
 }
 
-// Submission
+// Final Submit
 document.getElementById('teamForm').addEventListener('submit', function() {
     const btn = document.getElementById('submitBtn');
-    btn.innerHTML = "Sending to Pavilion...";
+    btn.innerHTML = "Submitting Squad...";
     btn.disabled = true;
     setTimeout(() => {
         localStorage.clear();
-        alert("Squad Registered! Good luck.");
+        alert("Male Squad Registered! Good luck.");
         location.reload();
     }, 2000);
 });
