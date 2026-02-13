@@ -44,15 +44,15 @@ const sports = [
     link: "regestration/cricket/cricket_reg.html"
   },
 
-  { 
+{ 
     title: "Throw Ball",
-    desc: "Fast reflexes and teamwork define the game.",
+    desc: "Fast reflexes and teamwork define the game. Aim for the win with every throw.",
     date: "Will be announced soon",
     location: "-",
-    team: "7 per team",
+    team: "7 Starters + 1 Reserve", // Updated to match your registration logic
     img: "img/sports/landscape/throwball_1.avif",
     imgPortrait: "img/sports/landscape/throwball_1.avif",
-    link: "regestration/throwball/throwball_reg.html"
+    link: "regestration/throwball/throwball_reg.html" // Ensure folder name spelling matches your directory
   },
 
   { 
@@ -166,6 +166,7 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
 
 
 
