@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<div class="stadium-overlay"></div>
-
 <div class="container">
     <div class="card" id="main-card">
         <div class="header">
@@ -23,7 +21,7 @@
             </div>
             
             <h1>Cricket Team Registration</h1>
-            <p>Squad of 15 • 11 Starters + 4 Bench</p>
+            <p>Squad of 15 • 1 Captain + 10 Starters + 2 Bench</p>
         </div>
 
         <form id="teamForm" action="https://docs.google.com/forms/d/e/1FAIpQLSffgB5QK_QWs3UDUARYDdchCvhtWV4cQxdJ91ZwW5fFZh7qYQ/formResponse" method="POST" target="hidden_iframe">
@@ -48,23 +46,27 @@
                 </div>
             </div>
 
-            <div class="section-title">Starting XI</div>
+            <div class="section-title">Starting XI (Players 2-11)</div>
             <div class="roster-grid" id="starters-container"></div>
 
-            <div class="section-title sub-header">Reserves</div>
+            <div class="section-title sub-header">Reserves (Substitute 1-4)</div>
             <div class="roster-grid" id="subs-container"></div>
 
-            <button type="submit" class="btn" id="submitBtn">
-                <span class="btn-text">Finalize Squad</span>
-                <div class="btn-loader"></div>
-            </button>
+            <button type="submit" class="btn" id="submitBtn">Finalize Squad</button>
         </form>
 
-        <div id="message" class="message"></div>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
 </div>
 
 <script src="js.js"></script>
 </body>
+<footer class="fixed-dock">
+    <div class="dock-links">
+        <a href="../../index.html" title="Home">🏠</a>
+        <a href="#" title="Schedule">📅</a>
+        <a href="#" title="Rules">📜</a>
+        <a href="#" title="Support">📞</a>
+    </div>
+</footer>
 </html>
