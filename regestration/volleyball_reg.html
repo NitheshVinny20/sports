@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Volleyball Registration - Female</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card" id="reg-card">
+        <div class="header">
+            <img src="volleyballmale.avif" alt="Volleyball Logo" class="logo" id="nav-logo" onclick="flipAndNavigate('female.html')">
+            <h1>Volleyball</h1>
+            <p>Male Category • 6 Players + 1 Reserve</p>
+        </div>
+
+        <form id="teamForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfWPQoEzfXvn_nGo0o5x7kftC1xn6GkwvtTs9jZvfZn_rBl8g/formResponse" method="POST" target="hidden_iframe">
+            
+            <div class="field">
+                <label>Team Name</label>
+                <input type="text" name="entry.1997065996" class="save-local" placeholder="Enter team name" required>
+            </div>
+
+            <div class="section-divider">Captain Details</div>
+            <div class="grid">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="entry.2081326091" class="save-local" placeholder="Captain Name" required>
+                </div>
+                <div class="field">
+                    <label>AUID</label>
+                    <input type="text" name="entry.1127107364" class="save-local" placeholder="Captain ID" required>
+                </div>
+            </div>
+            <div class="field">
+                <label>Mobile Number (Captain)</label>
+                <input type="tel" name="entry.2029844490" class="save-local" placeholder="10-digit number" required pattern="[0-9]{10}">
+            </div>
+
+            <div class="section-divider">Starting 6 (Players 2-6)</div>
+            <div class="grid" id="starters-container">
+                </div>
+
+            <div class="section-divider">Reserve Player</div>
+            <div class="grid" id="subs-container">
+                </div>
+
+            <button class="btn" type="submit" id="submit-button">Finalize Team</button>
+        </form>
+
+        <div id="message" class="message"></div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+</div>
+
+<footer class="fixed-dock">
+    <div class="dock-links">
+        <a href="../../index.html" title="Home">🏠</a>
+        <a href="#" title="Schedule">📅</a>
+        <a href="#" title="Rules">📜</a>
+        <a href="#" title="Support">📞</a>
+    </div>
+</footer>
+
+<script src="js.js">
+
+</script>
+</body>
+</html>
