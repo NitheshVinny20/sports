@@ -52,7 +52,7 @@ const sports = [
     team: "7 per team",
     img: "img/sports/landscape/throwball_1.avif",
     imgPortrait: "img/sports/landscape/throwball_1.avif",
-    link: "registration/throwball/reg.html"
+    link: "regestration/throwball/throwball_reg.html"
   },
 
   { 
@@ -166,6 +166,7 @@ window.addEventListener('resize', () => updateGallery(currentIndex));
 
 // Initial background
 updateGallery(0);
+
 
 
 
