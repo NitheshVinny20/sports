@@ -1,99 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrom Tournament Registration</title>
-<link rel="stylesheet" href="css.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Carrom Tournament Registration</title>
+    <link rel="stylesheet" href="css.css">
 </head>
-
 <body>
 <div class="container">
+    <div class="pocket top-right"></div>
+    <div class="pocket bottom-left"></div>
 
-  <img src="carrom.png" alt="Carrom Logo" class="logo">
-  <h1>Carrom</h1>
+    <img src="carrom.png" alt="Carrom Logo" class="logo">
+    <h1>Carrom</h1>
 
-  <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSfwB_4PX9G73_b9AKytYz9g8BxUI7V3si4aCQ5uMPRkUeSVFQ/formResponse" method="POST" target="hidden_iframe">
+    <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSceWmR7Xxea7dr537xjFajltfze5GWYXi2x__q6bmGPjVcndg/formResponse" method="POST" target="hidden_iframe">
 
-    <div class="field">
-      <label>Full Name</label>
-      <input type="text" name="entry.823367903" placeholder="Enter your full name" required>
-    </div>
+        <div class="field">
+            <label>Full Name</label>
+            <input type="text" name="entry.823367903" class="save-local" placeholder="Enter your full name" required>
+        </div>
 
-    <div class="field">
-      <label>College ID / AUID</label>
-      <input type="text" name="entry.1220683438" placeholder="Enter your ID" required>
-    </div>
+        <div class="field">
+            <label>College ID / AUID</label>
+            <input type="text" name="entry.1220683438" class="save-local" placeholder="Enter your ID" required>
+        </div>
 
-    <div class="field">
-      <label>Mobile Number</label>
-      <input type="tel" name="entry.602067814" placeholder="Enter your phone number" required pattern="[0-9]{10}">
-    </div>
+        <div class="field">
+            <label>Mobile Number</label>
+            <input type="tel" name="entry.602067814" class="save-local" placeholder="10-digit number" required pattern="[0-9]{10}">
+        </div>
 
-    <div class="field">
-      <label>Email Address</label>
-      <input type="email" name="entry.528041579" placeholder="Enter your email" required>
-    </div>
+        <div class="field">
+            <label>Email Address</label>
+            <input type="email" name="entry.528041579" class="save-local" placeholder="Enter your email" required>
+        </div>
 
-    <div class="field">
-      <label>Semester</label>
-      <select name="entry.1913456757" required>
-        <option value="">Select Semester</option>
-        <option value="Semester 2">Semester 2</option>
-        <option value="Semester 4">Semester 4</option>
-        <option value="Semester 6">Semester 6</option>
-      </select>
-    </div>
+        <div class="field">
+            <label>Semester</label>
+            <select name="entry.1913456757" class="save-local" required>
+                <option value="">Select Semester</option>
+                <option value="Semester 2">Semester 2</option>
+                <option value="Semester 4">Semester 4</option>
+                <option value="Semester 6">Semester 6</option>
+            </select>
+        </div>
 
-    <div class="field">
-      <label>Department</label>
-      <select name="entry.1418684154" required>
-        <option value="">Select Department</option>
-        <option value="CS">Computer Science and Engineering</option>
-        <option value="AE">Aeronautical Engineering</option>
-<option value="ADFT">Apparel Design and Fabrication Technology</option>
-<option value="ARC">Architecture Engineering</option>
-<option value="CE">Civil Engineering</option>
-<option value="ECE">Electronics and Communication Engineering</option>
-<option value="EEEVT">Electrical Engineering & Electrical Vehicle Technology</option>
-<option value="ME">Mechanical Engineering</option>
+        <div class="field">
+            <label>Department</label>
+            <select name="entry.1418684154" class="save-local" required>
+                <option value="">Select Department</option>
+                <option value="CS">Computer Science</option>
+                <option value="AE">Aeronautical</option>
+                <option value="ADFT">Apparel Design</option>
+                <option value="ARC">Architecture</option>
+                <option value="CE">Civil</option>
+                <option value="ECE">Electronics</option>
+                <option value="EEEVT">Electrical/EVT</option>
+                <option value="ME">Mechanical</option>
+            </select>
+        </div>
 
-      </select>
-    </div>
+        <button class="btn" type="submit" id="submit-button">Register Now</button>
+    </form>
 
-    <button class="btn" type="submit" id="submit-button">Register Now</button>
-
-  </form>
-
-  <div id="message" class="message"></div>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <div id="message" class="message"></div>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 </div>
 
-<script>
-const form = document.getElementById("form");
-const messageDiv = document.getElementById("message");
-const submitButton = document.getElementById("submit-button");
-
-form.addEventListener("submit", function (e) {
-  // Show submitting message
-  messageDiv.style.display = "block";
-  messageDiv.textContent = "Submitting...";
-  messageDiv.className = "message";
-
-  submitButton.disabled = true;
-
-  // Simulate success
-  setTimeout(() => {
-    messageDiv.textContent = "Thank you! Your registration has been recorded.";
-    messageDiv.className = "message success";
-    form.reset();
-    submitButton.disabled = false;
-    setTimeout(() => { messageDiv.style.display = "none"; }, 3500);
-  }, 1500);
-});
-</script>
-</body>
 <footer class="fixed-dock">
     <div class="dock-links">
         <a href="../../index.html" title="Home">🏠</a>
@@ -102,4 +79,7 @@ form.addEventListener("submit", function (e) {
         <a href="#" title="Support">📞</a>
     </div>
 </footer>
+
+<script src="js.js"></script>
+</body>
 </html>

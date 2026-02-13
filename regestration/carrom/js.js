@@ -1,27 +1,51 @@
-document.getElementById("carromForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSceWmR7Xxea7dr537xjFajltfze5GWYXi2x__q6bmGPjVcndg/formResponse";
-
-  const formData = new FormData();
-  formData.append("entry.823367903", document.getElementById("name").value);
-  formData.append("entry.1220683438", document.getElementById("auid").value);
-  formData.append("entry.1418684154", document.getElementById("dep").value);
-  formData.append("entry.1913456757", document.getElementById("sem").value);
-  formData.append("entry.602067814", document.getElementById("number").value);
-  formData.append("entry.528041579", document.getElementById("mail").value);
-
-  fetch(formURL, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  })
-  .then(() => {
-    alert("Registration Successful!");
-    document.getElementById("carromForm").reset();
-  })
-  .catch(() => {
-    alert("Submission failed. Try again.");
-  });
+// FORCE RELOAD ON BACK BUTTON: Resets animations stuck in mobile cache
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        window.location.reload(); 
+    }
 });
 
+// Form Submission & Auto-Save Logic
+const carromForm = document.getElementById("form");
+const messageDiv = document.getElementById("message");
+const submitButton = document.getElementById("submit-button");
+const inputs = document.querySelectorAll('.save-local');
+
+// Save data to localStorage as the user types
+inputs.forEach(input => {
+    input.addEventListener('input', () => {
+        localStorage.setItem('carrom_squad_data_' + input.name, input.value);
+    });
+});
+
+// Load saved data on page load
+window.onload = () => {
+    inputs.forEach(input => {
+        const val = localStorage.getItem('carrom_squad_data_' + input.name);
+        if (val) input.value = val;
+    });
+};
+
+if (carromForm) {
+    carromForm.addEventListener("submit", function (e) {
+        // Show submitting status
+        messageDiv.style.display = "block";
+        messageDiv.textContent = "Registering...";
+        messageDiv.className = "message";
+        submitButton.disabled = true;
+
+        // Provide success feedback after data is sent
+        setTimeout(() => {
+            messageDiv.textContent = "Registration Successful! See you at the Carrom board.";
+            messageDiv.className = "message success";
+            
+            localStorage.clear(); // Clear storage on success
+            carromForm.reset();
+            submitButton.disabled = false;
+            
+            setTimeout(() => { 
+                messageDiv.style.display = "none"; 
+            }, 5000);
+        }, 1500);
+    });
+}
