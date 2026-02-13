@@ -1,303 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket Registration - Female</title>
-    <style>
-        :root {
-            --primary-pink: #db2777;
-            --deep-purple: #4c1d95;
-            --grass-light: #fdf2f8;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrom Tournament Registration</title>
+<link rel="stylesheet" href="css.css">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            min-height: 100vh;
-            background: linear-gradient(rgba(76, 29, 149, 0.7), rgba(76, 29, 149, 0.7)), 
-                        url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-attachment: fixed;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            padding: 15px;
-        }
-
-        /* Page Transition */
-        .card {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            width: 100%;
-            max-width: 1000px;
-            border-radius: 20px;
-            padding: clamp(20px, 5vw, 40px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: transform 0.5s ease-in, opacity 0.5s;
-        }
-
-        .slide-out { transform: translateX(100%); opacity: 0; }
-
-        /* Gender Toggle Navigation */
-        .gender-nav { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 15px; 
-            margin-bottom: 30px; 
-            border-bottom: 1px solid #fce7f3; 
-            padding-bottom: 15px; 
-        }
-        .switch { position: relative; width: 60px; height: 30px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { 
-            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
-            background-color: var(--deep-purple); transition: .4s; border-radius: 34px; 
-        }
-        .slider:before { 
-            position: absolute; content: ""; height: 22px; width: 22px; 
-            left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; 
-        }
-        input:checked + .slider { background-color: var(--primary-pink); }
-        input:checked + .slider:before { transform: translateX(30px); }
-        .nav-label { font-weight: bold; color: #9d174d; font-size: 0.9rem; }
-
-        /* Typography & Sections */
-        h1 { color: var(--primary-pink); font-weight: 900; text-transform: uppercase; margin-bottom: 5px; }
-        .section-title { 
-            color: var(--white); background: var(--deep-purple); padding: 6px 16px; 
-            border-radius: 50px; display: inline-block; font-size: 0.75rem; font-weight: bold; 
-            margin: 25px 0 15px 0; 
-        }
-        .sub-header { background: var(--primary-pink); }
-
-        /* Grid System */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .roster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-
-        .player-box { 
-            background: var(--grass-light); border: 1px solid #fbcfe8; padding: 12px; border-radius: 14px; 
-            display: flex; align-items: center; gap: 12px; transition: 0.3s; 
-        }
-        .player-box:hover { border-color: var(--primary-pink); background: white; transform: translateY(-2px); }
-
-        .jersey-num { 
-            background: #fdf2f8; width: 32px; height: 32px; min-width: 32px; 
-            display: flex; align-items: center; justify-content: center; border-radius: 50%; 
-            font-weight: bold; color: var(--primary-pink); border: 1px solid #f9a8d4;
-        }
-
-        /* Inputs */
-        .floating { position: relative; width: 100%; margin-top: 10px; }
-        .floating input { 
-            width: 100%; padding: 12px; border: 2px solid #fbcfe8; 
-            border-radius: 10px; outline: none; background: transparent; 
-        }
-        .floating label { 
-            position: absolute; left: 12px; top: 50%; transform: translateY(-50%); 
-            color: #be185d; pointer-events: none; transition: 0.2s ease; 
-        }
-        .floating input:focus + label, .floating input:not(:placeholder-shown) + label { 
-            top: -8px; font-size: 11px; background: white; padding: 0 5px; color: var(--primary-pink); 
-        }
-
-        input {
-            width: 100%; padding: 10px; margin: 3px 0; border: 1px solid #fbcfe8;
-            border-radius: 6px; outline-color: var(--primary-pink);
-        }
-
-        .btn { 
-            background: var(--primary-pink); color: white; width: 100%; padding: 18px; 
-            border-radius: 12px; border: none; font-size: 1.1rem; font-weight: bold; 
-            cursor: pointer; margin-top: 30px; transition: 0.3s; text-transform: uppercase;
-        }
-        .btn:hover { background: var(--deep-purple); transform: translateY(-2px); }
-        /* Fixed Floating Dock */
-.fixed-dock {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%); /* Centers the dock */
-    z-index: 9999;
-    width: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.dock-links {
-    display: flex;
-    gap: 25px;
-    background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 12px 25px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
-}
-
-.dock-links a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: grayscale(1) brightness(2); /* Keeps icons minimalist/white */
-}
-
-.dock-links a:hover {
-    transform: translateY(-5px) scale(1.2);
-    filter: grayscale(0) brightness(1); /* Returns color on hover */
-}
-
-/* Adds padding to the bottom of the container so the form doesn't get hidden behind the dock */
-.container {
-    padding-bottom: 100px; 
-}
-    </style>
 </head>
+
 <body>
-
 <div class="container">
-    <div class="card" id="main-card">
-        <div class="header">
-            <div class="gender-nav">
-                <span class="nav-label">Male</span>
-                <label class="switch">
-                    <input type="checkbox" id="gender-toggle" checked onchange="toggleGender()">
-                    <span class="slider round"></span>
-                </label>
-                <span class="nav-label">Female</span>
-            </div>
-            
-            <h1>Cricket Registration</h1>
-            <p>Female Squad of 15 • 11 Starters + 2 Bench</p>
-        </div>
 
-        <form id="teamForm" action="https://docs.google.com/forms/d/e/YOUR_FEMALE_FORM_ID/formResponse" method="POST" target="hidden_iframe">
-            
-            <div class="section-title">Team Leadership</div>
-            <div class="grid">
-                <div class="field floating">
-                    <input type="text" name="entry.1997065996" class="save-local" placeholder=" " required>
-                    <label>Team Name</label>
-                </div>
-                <div class="field floating">
-                    <input type="text" name="entry.2081326091" class="save-local" placeholder=" " required>
-                    <label>Captain Name</label>
-                </div>
-                <div class="field floating">
-                    <input type="text" name="entry.1127107364" class="save-local" placeholder=" " required>
-                    <label>Captain AUID</label>
-                </div>
-                <div class="field floating">
-                    <input type="tel" name="entry.2029844490" class="save-local" placeholder=" " required pattern="[0-9]{10}">
-                    <label>Mobile Number</label>
-                </div>
-            </div>
+  <img src="carrom.png" alt="Carrom Logo" class="logo">
+  <h1>Carrom</h1>
 
-            <div class="section-title">Starting XI (Players 2-11)</div>
-            <div class="roster-grid" id="starters-container"></div>
+  <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSfwB_4PX9G73_b9AKytYz9g8BxUI7V3si4aCQ5uMPRkUeSVFQ/formResponse" method="POST" target="hidden_iframe">
 
-            <div class="section-title sub-header">Reserves (Substitute 1-4)</div>
-            <div class="roster-grid" id="subs-container"></div>
-
-            <button type="submit" class="btn" id="submitBtn">Finalize Female Squad</button>
-        </form>
-
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" name="entry.823367903" placeholder="Enter your full name" required>
     </div>
+
+    <div class="field">
+      <label>College ID / AUID</label>
+      <input type="text" name="entry.1220683438" placeholder="Enter your ID" required>
+    </div>
+
+    <div class="field">
+      <label>Mobile Number</label>
+      <input type="tel" name="entry.602067814" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+    </div>
+
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" name="entry.528041579" placeholder="Enter your email" required>
+    </div>
+
+    <div class="field">
+      <label>Semester</label>
+      <select name="entry.1913456757" required>
+        <option value="">Select Semester</option>
+        <option value="Semester 2">Semester 2</option>
+        <option value="Semester 4">Semester 4</option>
+        <option value="Semester 6">Semester 6</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Department</label>
+      <select name="entry.1418684154" required>
+        <option value="">Select Department</option>
+        <option value="CS">CS</option>
+        <option value="ADFT">ADFT</option>
+        <option value="AE">AE</option>
+        <option value="ARC">ARC</option>
+        <option value="ECE">ECE</option>
+        <option value="EE">EE</option>
+        <option value="EVT">EVT</option>
+        <option value="ME">ME</option>
+      </select>
+    </div>
+
+    <button class="btn" type="submit" id="submit-button">Register Now</button>
+
+  </form>
+
+  <div id="message" class="message"></div>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 </div>
 
 <script>
-    const startersMap = [
-        { n: "entry.164796864", i: "entry.466232286" },
-        { n: "entry.279343295", i: "entry.590979872" },
-        { n: "entry.1906076037", i: "entry.96241058" },
-        { n: "entry.908985867", i: "entry.1159611705" },
-        { n: "entry.1988112041", i: "entry.1539910648" },
-        { n: "entry.1685335114", i: "entry.1156136104" },
-        { n: "entry.2103729441", i: "entry.1761177781" },
-        { n: "entry.911277598", i: "entry.1938205651" },
-        { n: "entry.1635033387", i: "entry.1366413584" },
-        { n: "entry.1971252509", i: "entry.2125999837" }
-    ];
+const form = document.getElementById("form");
+const messageDiv = document.getElementById("message");
+const submitButton = document.getElementById("submit-button");
 
-    const subsMap = [
-        { n: "entry.357225766", i: "entry.1982817856" },
-        { n: "entry.1284111609", i: "entry.1497776436" },
-    ];
+form.addEventListener("submit", function (e) {
+  // Show submitting message
+  messageDiv.style.display = "block";
+  messageDiv.textContent = "Submitting...";
+  messageDiv.className = "message";
 
-    const startersContainer = document.getElementById('starters-container');
-    startersMap.forEach((p, idx) => {
-        startersContainer.innerHTML += `
-            <div class="player-box">
-                <div class="jersey-num">${idx + 2}</div>
-                <div style="flex:1">
-                    <input type="text" name="${p.n}" class="save-local" placeholder="Player Name">
-                    <input type="text" name="${p.i}" class="save-local" placeholder="AUID">
-                </div>
-            </div>`;
-    });
+  submitButton.disabled = true;
 
-    const subsContainer = document.getElementById('subs-container');
-    subsMap.forEach((p, idx) => {
-        subsContainer.innerHTML += `
-            <div class="player-box">
-                <div class="jersey-num">R${idx + 1}</div>
-                <div style="flex:1">
-                    <input type="text" name="${p.n}" class="save-local" placeholder="Reserve Name">
-                    <input type="text" name="${p.i}" class="save-local" placeholder="AUID">
-                </div>
-            </div>`;
-    });
-
-    const allInputs = document.querySelectorAll('.save-local, .floating input');
-    window.onload = () => {
-        allInputs.forEach(input => {
-            const val = localStorage.getItem('femaleCricketSquad_' + input.name);
-            if (val) input.value = val;
-        });
-    };
-
-    allInputs.forEach(input => {
-        input.addEventListener('input', () => {
-            localStorage.setItem('femaleCricketSquad_' + input.name, input.value);
-        });
-    });
-
-    function toggleGender() {
-        const isChecked = document.getElementById('gender-toggle').checked;
-        const card = document.querySelector('.card');
-        card.classList.add('slide-out');
-        
-        setTimeout(() => {
-            // Redirect to male version (assuming index.html or cricket_reg.html)
-            window.location.href = isChecked ? 'female.html' : 'cricket_reg.html';
-        }, 500);
-    }
-
-    document.getElementById('teamForm').addEventListener('submit', function() {
-        const btn = document.getElementById('submitBtn');
-        btn.innerHTML = "Submitting Squad...";
-        btn.disabled = true;
-        setTimeout(() => {
-            localStorage.clear();
-            alert("Female Squad Registered! Good luck!");
-            location.reload();
-        }, 2000);
-    });
+  // Simulate success
+  setTimeout(() => {
+    messageDiv.textContent = "Thank you! Your registration has been recorded.";
+    messageDiv.className = "message success";
+    form.reset();
+    submitButton.disabled = false;
+    setTimeout(() => { messageDiv.style.display = "none"; }, 3500);
+  }, 1500);
+});
 </script>
 </body>
-<footer class="fixed-dock">
-    <div class="dock-links">
-        <a href="../../index.html" title="Home">🏠</a>
-        <a href="#" title="Schedule">📅</a>
-        <a href="#" title="Rules">📜</a>
-        <a href="#" title="Support">📞</a>
-    </div>
-</footer>
 </html>
